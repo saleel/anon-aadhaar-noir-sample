@@ -36,7 +36,7 @@ function App() {
       console.log(proof, provingTime);
       setProvingTime(provingTime);
     } catch (error) {
-      setError((error as Error).stack ?? (error as Error).message);
+      setError(`${(error as Error).message}\n${(error as Error).stack}`);
       console.error(error);
     } finally {
       setLoading(false);
