@@ -1,6 +1,6 @@
-import React from 'react'
-import { generateProof } from '@anon-aadhaar/noir-core'
-import './styles.scss'
+import React from "react";
+import { generateProof } from "@anon-aadhaar/noir-core";
+import "./styles.scss";
 
 function App() {
   const [qrData, setQrData] = React.useState<string | null>(
@@ -9,14 +9,17 @@ function App() {
   const [provingTime, setProvingTime] = React.useState(0);
   const [loading, setLoading] = React.useState(false);
   const [counter, setCounter] = React.useState(0);
+  const [error, setError] = React.useState<string | null>(null);
+  const [proof, setProof] = React.useState<string | null>(null);
+  const [publicSignals, setPublicSignals] = React.useState<string | null>(null);
 
   async function handleProve() {
     setLoading(true);
     setCounter(0);
-    
+
     // Start counter
     const interval = setInterval(() => {
-      setCounter(prev => prev + 1);
+      setCounter((prev) => prev + 1);
     }, 1000);
 
     try {
@@ -43,20 +46,42 @@ function App() {
           value={qrData ?? ""}
           onChange={(e) => setQrData(e.target.value)}
         />
-        
-        <button 
-          className="btn-prove" 
-          onClick={handleProve}
-          disabled={loading}
-        >
-          {loading ? `Generating proof... (${counter}s)` : 'Prove'}
+
+        <button className="btn-prove" onClick={handleProve} disabled={loading}>
+          {loading ? `Generating proof... (${counter}s)` : "Prove"}
         </button>
 
         <br />
-        {provingTime > 0 && <p>Proving time: {new Intl.NumberFormat().format(provingTime)}ms</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+
+        {provingTime > 0 && (
+          <p>Proving time: {new Intl.NumberFormat().format(provingTime)}ms</p>
+        )}
+        <br />
+        <br />
+
+        <h4>Proof</h4>
+        {proof && (
+          <textarea
+            style={{ width: "100%", height: "200px" }}
+            readOnly
+            value={JSON.stringify(proof)}
+          />
+        )}
+        <br />
+        <br />
+
+        <h4>Public Signals</h4>
+        {publicSignals && (
+          <textarea
+            style={{ width: "100%", height: "200px" }}
+            readOnly
+            value={JSON.stringify(publicSignals)}
+          />
+        )}
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
