@@ -24,7 +24,15 @@ function App() {
 
     try {
       const { generateProof } = await import("@anon-aadhaar/noir-core");
-      const { proof, provingTime } = await generateProof(qrData as string);
+      const { proof, provingTime } = await generateProof(qrData as string, {
+        revealGender: false,
+        revealAgeAbove18: false,
+        useTestingKey: true,
+        nullifierSeed: 123,
+        signal: "1",
+        revealPinCode: false,
+        revealState: false,
+      });
       console.log(proof, provingTime);
       setProvingTime(provingTime);
     } catch (error) {
