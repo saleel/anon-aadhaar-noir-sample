@@ -28,6 +28,7 @@ function App() {
       console.log(proof, provingTime);
       setProvingTime(provingTime);
     } catch (error) {
+      setError(error.message);
       console.error(error);
     } finally {
       setLoading(false);
@@ -60,24 +61,28 @@ function App() {
         <br />
         <br />
 
-        <h4>Proof</h4>
         {proof && (
-          <textarea
+          <>
+            <h4>Proof</h4>
+            <textarea
             style={{ width: "100%", height: "200px" }}
             readOnly
-            value={JSON.stringify(proof)}
-          />
+              value={JSON.stringify(proof)}
+            />
+          </>
         )}
         <br />
         <br />
 
-        <h4>Public Signals</h4>
         {publicSignals && (
-          <textarea
-            style={{ width: "100%", height: "200px" }}
+          <>
+            <h4>Public Signals</h4>
+            <textarea
+              style={{ width: "100%", height: "200px" }}
             readOnly
             value={JSON.stringify(publicSignals)}
-          />
+            />
+          </>
         )}
       </div>
     </div>
