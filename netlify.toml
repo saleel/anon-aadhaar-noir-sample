@@ -1,15 +1,15 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Cross-Origin-Opener-Policy = "same-origin"
-    Cross-Origin-Embedder-Policy = "require-corp"
-  conditions = {IsiOS = false}
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Cross-Origin-Opener-Policy = "same-origin"
+#     Cross-Origin-Embedder-Policy = "require-corp"
+#   conditions = {IsiOS = false}
 
-[context.production]
-  # Your production context settings if any...
+# [context.production]
+#   # Your production context settings if any...
 
-# Define the iOS condition
-[conditions]
-  IsiOS = '''
-    navigator.userAgent.match(/iPhone|iPad|iPod/i)
-  '''
+# # Define the iOS condition
+# [conditions]
+#   IsiOS = '''
+#     navigator.userAgent.match(/iPhone|iPad|iPod/i)
+#   '''
