@@ -39,9 +39,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@anon-aadhaar/noir-core@https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?f056433":
+"@anon-aadhaar/noir-core@https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?a0ddaec":
   version: 0.1.0
-  resolution: "@anon-aadhaar/noir-core@https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?f056433"
+  resolution: "@anon-aadhaar/noir-core@https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?a0ddaec"
   dependencies:
     "@anon-aadhaar/core": "npm:^2.4.0"
     "@anon-aadhaar/react": "npm:^2.4.1"
@@ -51,7 +51,7 @@ __metadata:
     "@noir-lang/noir_js": "npm:^0.38.0"
     "@zk-email/helpers": "npm:^6.1.1"
     node-forge: "npm:^1.3.1"
-  checksum: 10c0/fae3c8884b0541b8cb0cd63c7ca543dad18b293c72afa337db1bfeb3197671008a1efd439541e601b38f60c6f6ef22bc763929163d26516f257389469eaba775
+  checksum: 10c0/460cbe60887964d0671130d4cddf7f03fd64cc50366935f4c892f8864ee5c43e058ea64438e891630a61007a6060df5d304be73f264a4a81aff7306cc7cdf862
   languageName: node
   linkType: hard
 
@@ -2098,7 +2098,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "anon-aadhaar-noir-sample@workspace:."
   dependencies:
-    "@anon-aadhaar/noir-core": "https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?f056433"
+    "@anon-aadhaar/noir-core": "https://gitpkg.vercel.app/anon-aadhaar/anon-aadhaar-noir/js?a0ddaec"
     "@eslint/js": "npm:^9.15.0"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
